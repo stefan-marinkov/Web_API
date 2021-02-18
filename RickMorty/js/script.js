@@ -6,24 +6,45 @@ const prevBtn = selectEl('.prev')
 const nextBtn = selectEl('.next')
 let count = 1
 
-let baseUrl = `https://rickandmortyapi.com/api/character/?page=${count}`
+let baseUrl = "https://rickandmortyapi.com/api/character/?page=" + count
 
 
-// prevBtn.addEventListener( 'click', () => count-- )
-getRandM()
+//NEXT PAGE
+
+nextBtn.addEventListener( 'click', () => {
+    count < 34 ? count ++ : count
+    
+    let baseUrl = "https://rickandmortyapi.com/api/character/?page=" + count
+    getRandM(baseUrl)
+    .then( data => getAllChar(data))
+})
+
+//PREV PAGE
+prevBtn.addEventListener( 'click', () => {
+    count > 0 ? count -- : count
+    let baseUrl = "https://rickandmortyapi.com/api/character/?page=" + count
+    getRandM(baseUrl)
+    .then( data => getAllChar(data))
+})
+
+
+
+getRandM(baseUrl)
 .then( data => getAllChar(data))
 
 
-async function getRandM() {
+async function getRandM(url) {
 
-    const resolve = await fetch( baseUrl)
+    const resolve = await fetch( url)
     const data = await resolve.json()
     return data
 }
 
 
 function getAllChar(data) {
-    console.log(data)
+    
+    wrap.innerHTML = ''
+
     data.results.forEach( char => {
         const divChar = createEl('div', 'char')
         divChar.innerHTML = `<p>${char.name}</p>
@@ -35,16 +56,12 @@ function getAllChar(data) {
 
         // GET SINGLE CHARACTER
 
-divChar.addEventListener( 'click', (e) => {
-    e.preventDefault()
-            const singleCharacter = "https://rickandmortyapi.com/api/character/" + char.id
-
-    fetch(singleCharacter)
+divChar.addEventListener( 'click', () => {
+    
+    fetch("https://rickandmortyapi.com/api/character/" + char.id)
     .then(res => res.json())
     .then(data => singleChar(data))
-
     function singleChar(data) {
-        console.log(data)
         const characterInfo = createEl('div', 'singCh')
         characterInfo.innerHTML = `
             <img class='sinImg' src='${data.image}'>
@@ -69,11 +86,6 @@ divChar.addEventListener( 'click', (e) => {
     }
         })
     })
-    nextBtn.addEventListener( 'click', (e) => {
-        e.preventDefault()
-        fetch(data.info.next)
-        .then( res => res.json())
-        .then( data => getAllChar(data))
-        
-    })
+
+    //NEXT PAGE
 }
