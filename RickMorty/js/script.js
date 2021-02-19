@@ -8,7 +8,6 @@ let count = 1
 
 let baseUrl = "https://rickandmortyapi.com/api/character/?page=" + count
 
-
 //NEXT PAGE
 
 nextBtn.addEventListener( 'click', () => {
@@ -27,8 +26,6 @@ prevBtn.addEventListener( 'click', () => {
     .then( data => getAllChar(data))
 })
 
-
-
 getRandM(baseUrl)
 .then( data => getAllChar(data))
 
@@ -40,7 +37,6 @@ async function getRandM(url) {
     return data
 }
 
-
 function getAllChar(data) {
     
     wrap.innerHTML = ''
@@ -51,17 +47,24 @@ function getAllChar(data) {
         <img class='charImg' src='${char.image}'>
         <button class='btn'>Info</button>`
         wrap.appendChild(divChar)
-
-        
-
         // GET SINGLE CHARACTER
-
 divChar.addEventListener( 'click', () => {
-    
-    fetch("https://rickandmortyapi.com/api/character/" + char.id)
-    .then(res => res.json())
+    let singUrl = ("https://rickandmortyapi.com/api/character/" + char.id);
+
+    getSingChar(singUrl)
     .then(data => singleChar(data))
+    
+
+    async function getSingChar(url) {
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
+    }
+
+
     function singleChar(data) {
+        
+        otherPage.innerHTML = ''
         const characterInfo = createEl('div', 'singCh')
         characterInfo.innerHTML = `
             <img class='sinImg' src='${data.image}'>
@@ -74,18 +77,20 @@ divChar.addEventListener( 'click', () => {
             </div>
             <button class='back'>Back To All Character</button>
         `
+
+
         otherPage.appendChild(characterInfo)
         otherPage.classList.toggle('active')
         wrap.style.display = 'none'
+
         
-
-        const btn =selectEl('.back')
+        const btn = selectEl('.back')
         btn.addEventListener('click', () => {
-            location.reload()
-        })
+        wrap.style.display = 'flex'
+        characterInfo.style.display = 'none'
+})
+    
     }
-        })
-    })
-
-    //NEXT PAGE
+})
+})
 }

@@ -117,4 +117,7 @@
       width: 100%;
       cursor: pointer; }
 
+.singular {
+  visibility: hidden; }
+
 /*# sourceMappingURL=style.css.map */
