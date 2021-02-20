@@ -1,0 +1,81 @@
+// MEDIA 
+
+@media all and (max-width: 1024px) {
+    .wrap {
+        margin-top: 25%;
+        & .char {
+            width: 23%;
+        }
+    }
+}
+
+
+@media all and (max-width: 769px) {
+    .wrap {
+        margin-top: 25%;
+        & .char {
+            width: 30%;
+            margin-top: 3%;
+        }
+    }
+}
+
+@media all and (max-width: 600px) {
+    .wrap {
+        margin-top: 35%;
+        & .char {
+            width: 45%;
+        }
+    }
+}
+
+
+@media all and (max-width: 400px) {
+    .prevNext {
+        top: 5%;
+        height: 1.5rem;
+    }
+    .wrap {
+        margin-top: 25%;
+        & .char {
+            width: 80%;
+}
+}
+}
+
+
+@media all and (min-width: 960px) {
+    .sinImg {
+        min-height: 50%;
+    }
+}
+
+@media all and (max-width: 380px) {
+
+    .active {
+        height: 80vh;
+    }
+    .sinImg {
+        display: none;
+    }
+    
+    .charInfo {
+        width: 70%;
+        height: 30%;
+    }
+    p {
+        padding: .2%;
+        margin: .2%;
+    }
+
+    .back {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media all and (max-width: 220px) {
+    img {
+        display: none;
+    }
+}

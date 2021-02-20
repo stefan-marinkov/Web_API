@@ -24,9 +24,7 @@ prevBtn.addEventListener( 'click', () => {
     getRandM(baseUrl)
     .then( data => getAllChar(data))
 })
-
-// BASE URL FETCH
-
+// BASE URL FETCH FOR ALL CHAR
 getRandM(baseUrl)
 .then( data => getAllChar(data))
 
@@ -49,7 +47,6 @@ function getAllChar(data) {
         wrap.appendChild(divChar)
         // GET SINGLE CHARACTER
 divChar.addEventListener( 'click', () => {
-
 
     let singUrl = ("https://rickandmortyapi.com/api/character/" + char.id);
 

@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box; }
   * body {
-    background: url("../r&m.jpg") no-repeat center center fixed;
+    background: url("../rkf.jpg") no-repeat center center fixed;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -34,7 +34,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background: url(../r&m.jpg) no-repeat center fixed;
+    background: url(../rkf.jpg) no-repeat center fixed;
     background-size: cover;
     animation: inputField 2s ease-out; }
     * .prevNext > button {
@@ -47,7 +47,7 @@
   width: 80%;
   position: absolute;
   margin-top: 15%;
-  box-shadow: 0 0 10px 0 #27f1ff;
+  box-shadow: 0 0 10px 0 #38CACB;
   border-radius: 3%;
   display: flex;
   flex-direction: row;
@@ -64,7 +64,7 @@
     cursor: pointer; }
     .wrap .char p {
       color: black;
-      background: #5AFF5A;
+      background: #38CACB;
       font-size: 1rem;
       max-height: 1.2rem;
       overflow: hidden;
@@ -76,9 +76,9 @@
       width: 80%;
       padding: .2rem;
       border-radius: 20%;
-      background: #5AFF5A; }
+      background: #38CACB; }
   .wrap .char:hover {
-    background: rgba(61, 0, 251, 0.4);
+    background: rgba(175, 180, 183, 0.4);
     transform: scale(1.1); }
 
 @keyframes opacity {
@@ -127,21 +127,18 @@
       flex-direction: column;
       justify-content: space-evenly; }
       .active .singCh .charInfo p {
-        background: #A9D3E9;
+        background: #38CACB;
         padding: 2%;
         border-radius: 5%;
         margin: 2%; }
     .active .singCh .back {
-      background: #A9D3E9;
+      background: #38CACB;
       margin: auto 0;
       max-height: 100px;
       padding: 1rem;
       width: 100%;
       border-radius: 5%;
       cursor: pointer; }
-
-.singular {
-  top: 100%; }
 
 @media all and (max-width: 1024px) {
   .wrap {
@@ -152,7 +149,8 @@
   .wrap {
     margin-top: 25%; }
     .wrap .char {
-      width: 30%; } }
+      width: 30%;
+      margin-top: 3%; } }
 @media all and (max-width: 600px) {
   .wrap {
     margin-top: 35%; }
