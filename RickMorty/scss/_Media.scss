@@ -53,15 +53,15 @@
 @media all and (max-width: 380px) {
 
     .active {
-        height: 80vh;
+        height: 80%;
     }
     .sinImg {
         display: none;
     }
     
     .charInfo {
-        width: 70%;
-        height: 30%;
+        width: 100%;
+        height: 100%;
     }
     p {
         padding: .2%;
@@ -71,6 +71,8 @@
     .back {
         margin: 0;
         padding: 0;
+        position: absolute;
+        bottom: 0;
     }
 }
 

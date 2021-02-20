@@ -16,8 +16,7 @@
                 width: 35%;
                 z-index: 5;
                 transform: translateX(-50%);
-                animation: inputField 2s ease-out;
-                
+                //animation: inputField 2s ease-out;
                 display: none;
                 flex-direction: row;                
 }
@@ -42,17 +41,17 @@
                 align-items: center;
                 background: url(../rkf.jpg) no-repeat center fixed;
                 background-size: cover;
-                animation: inputField 2s ease-out;
+                //animation: inputField 2s ease-out;
                 & > button {
                     width: 25%;
                     height: 1.5rem;
                 }
             }
-            @keyframes inputField {
-                10% {
-                    left: 5%;
-                }
-        }
+        //     @keyframes inputField {
+        //         10% {
+        //             left: 5%;
+        //         }
+        // }
     }
 
 @import './Wrap';
