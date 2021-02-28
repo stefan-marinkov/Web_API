@@ -13,7 +13,8 @@ const apiID = '8724dd8a'
 
 const idAndKeyAndInputValue = `&app_id=${apiID}&app_key=${key}`
 
-btn.addEventListener('click',() => {
+btn.addEventListener('click',(e) => {
+  e.preventDefault()
     header.classList.toggle('active')
     fetchRecipe()
 })
@@ -32,7 +33,7 @@ function getRecipe(data) {
         console.log(e.recipe)
         const imgDiv = createEl('div', 'imgOfRec')
         imgDiv.innerHTML = `
-        <div class="card" style="width: 18rem;">
+        <div class="card cardRecipe" style="width: 18rem;">
   <img src="${e.recipe.image}" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">Title: ${e.recipe.label}</h5>
@@ -42,10 +43,9 @@ function getRecipe(data) {
     <li class="list-group-item">Calories: ${e.recipe.calories.toFixed(0)}</li>
     <li class="list-group-item">Health Diet: ${e.recipe.healthLabels} </li>
     <li class="list-group-item">Weight: ${e.recipe.totalWeight.toFixed(0)}</li>
-  </ul>
-  <div class="card-body">
-    <p class="card-link">Source: ${e.recipe.source}</p>
-    <a href="${e.recipe.shareAs}" class="card-link">View Recipe</a>
+    <li class="list-group-item">Source: ${e.recipe.source}</li>
+    <li class="list-group-item"><a class="btn btn-primary"  href="${e.recipe.shareAs}" role="button">View Recipe</a></li>
+    </ul>
   </div>
 </div>
         `
