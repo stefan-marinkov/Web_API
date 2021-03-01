@@ -13,13 +13,21 @@
   background: linear-gradient(45deg, red, black); }
   .allBack .search {
     width: 50%; }
-    .allBack .search input {
-      outline: none; }
-    .allBack .search input:focus {
-      background: none; }
+    .allBack .search input,
     .allBack .search .btn {
       background: whitesmoke;
-      outline: none; }
+      outline: none;
+      box-shadow: none;
+      border-radius: 0;
+      color: #5f5e5e; }
+    .allBack .search input {
+      padding: 3%; }
+    .allBack .search .btn {
+      height: 100%; }
+    .allBack .search .btn:focus {
+      color: whitesmoke;
+      background: transparent;
+      border: none; }
 
 .active {
   height: 10vh;
@@ -49,5 +57,14 @@
       height: 4rem;
       overflow: hidden;
       text-overflow: ellipsis; }
+
+.activeRecipe {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: space-evenly;
+  align-items: center; }
 
 /*# sourceMappingURL=style.css.map */

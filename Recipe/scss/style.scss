@@ -16,15 +16,24 @@
     
     & .search {
         width: 50%;
-        & input {
-            outline: none;
-        }
-        & input:focus {
-            background: none;
-        }
-        & .btn {
+        & input,
+        .btn {
             background: whitesmoke;
             outline: none;
+            box-shadow: none;
+            border-radius: 0;
+            color: rgb(95, 94, 94);
+        }
+        & input {
+            padding: 3%;
+        }
+        & .btn {
+            height: 100%;
+        }
+        & .btn:focus {
+            color: whitesmoke;
+            background: transparent;
+            border: none;
         }
     }
 }
@@ -63,4 +72,18 @@
             text-overflow: ellipsis;
         }
     }
+}
+
+// .oneRecipe {
+//     display: none;
+// }
+
+.activeRecipe {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    align-items: center;
 }

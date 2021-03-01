@@ -4,7 +4,7 @@ const wrap = selectEl('.wrap')
 const input = selectEl('input')
 const btn = selectEl('.btn')
 const header = selectEl('header')
-
+const oneIngredient = selectEl('.oneRecipe')
 const baseUrl = 'https://api.edamam.com/search?'
 
 const key = '1d75d1aa1bdf60749bb0d7e4fbce2313'
@@ -21,7 +21,7 @@ btn.addEventListener('click',(e) => {
 
 async function fetchRecipe() {
 
-const res = await fetch(baseUrl + idAndKeyAndInputValue + '&q=' + input.value)
+const res = await fetch(baseUrl + idAndKeyAndInputValue + '&to=24' + '&q=' + input.value)
     const data = await res.json()
     getRecipe(data.hits)
 }
@@ -30,7 +30,7 @@ function getRecipe(data) {
     
     wrap.innerHTML = ''
     data.forEach(e => {
-        console.log(e.recipe)
+      console.log(e.recipe.ingredientLines)
         const imgDiv = createEl('div', 'imgOfRec')
         imgDiv.innerHTML = `
         <div class="card cardRecipe" style="width: 18rem;">
@@ -44,11 +44,23 @@ function getRecipe(data) {
     <li class="list-group-item">Health Diet: ${e.recipe.healthLabels} </li>
     <li class="list-group-item">Weight: ${e.recipe.totalWeight.toFixed(0)}</li>
     <li class="list-group-item">Source: ${e.recipe.source}</li>
-    <li class="list-group-item"><a class="btn btn-primary"  href="${e.recipe.shareAs}" role="button">View Recipe</a></li>
+    //<li class="list-group-item"><a class="btn btn-primary ingredients"   role="button">View Ingredient</a></li>
+    <li class="list-group-item"><a class="btn btn-primary" href="${e.recipe.url}" role="button">View Original  Recipe</a></li>
     </ul>
   </div>
 </div>
-        `
+`
         wrap.appendChild(imgDiv)
+      //! Make List Of Ingredient!!!
+        // const oneIng = selectEl('.ingredients')
+        // oneIng.addEventListener( 'click', () => {
+        //   e.recipe.ingredientLines.forEach( e => {
+        //   oneIngredient.innerHTML = `
+        //   <div class="card cardRecipe" style="width: 18rem;">
+        //   ${e}
+        //   </div>
+        //   `
+        // })
+        // })
     });
 }
