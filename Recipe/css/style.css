@@ -21,7 +21,7 @@
       border-radius: 0;
       color: #5f5e5e; }
     .allBack .search input {
-      padding: 3%; }
+      padding: 1%; }
     .allBack .search .btn {
       height: 100%; }
     .allBack .search .btn:focus {
@@ -59,6 +59,7 @@
       text-overflow: ellipsis; }
 
 .activeRecipe {
+  visibility: visible;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -66,5 +67,9 @@
   margin: 0 auto;
   justify-content: space-evenly;
   align-items: center; }
+
+.ingCardStyle {
+  margin: 5% auto;
+  width: 50%; }
 
 /*# sourceMappingURL=style.css.map */

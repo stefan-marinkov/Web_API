@@ -25,7 +25,7 @@
             color: rgb(95, 94, 94);
         }
         & input {
-            padding: 3%;
+            padding: 1%;
         }
         & .btn {
             height: 100%;
@@ -74,11 +74,8 @@
     }
 }
 
-// .oneRecipe {
-//     display: none;
-// }
-
 .activeRecipe {
+    visibility: visible;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -86,4 +83,9 @@
     margin: 0 auto;
     justify-content: space-evenly;
     align-items: center;
+    
+}
+.ingCardStyle {
+    margin: 5% auto;
+    width: 50%;
 }
