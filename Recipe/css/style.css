@@ -53,20 +53,26 @@
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap; }
+      .wrap .cardRecipe .card-body .card-title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
     .wrap .cardRecipe ul > li:nth-child(2) {
       height: 4rem;
       overflow: hidden;
       text-overflow: ellipsis; }
 
-.activeRecipe {
-  visibility: visible;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 80%;
+.oneRecipe {
+  width: 60%;
   margin: 0 auto;
-  justify-content: space-evenly;
-  align-items: center; }
+  display: flex;
+  box-shadow: 0 0 5px gray;
+  border-radius: 5px;
+  padding: 2%;
+  text-align: center;
+  justify-content: center; }
+  .oneRecipe img {
+    padding: 5%; }
 
 .ingCardStyle {
   margin: 5% auto;

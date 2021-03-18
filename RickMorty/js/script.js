@@ -73,7 +73,7 @@ divChar.addEventListener( 'click', () => {
                 <p>Origin: ${data.origin.name}</p>
                 <p>Location: ${data.location.name}</p>
             </div>
-            <button class='back'>Back To All Character</button>   
+            <button class='back' onclick="">Back To All Character</button>   
         `
         otherPage.classList.toggle('active')
         otherPage.appendChild(characterInfo)

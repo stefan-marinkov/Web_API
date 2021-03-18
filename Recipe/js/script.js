@@ -49,6 +49,7 @@ function getRecipe(data) {
     <li class="list-group-item">Health Diet: ${e.recipe.healthLabels} </li>
     <li class="list-group-item">Weight: ${e.recipe.totalWeight.toFixed(0)}</li>
     <li class="list-group-item">Source: ${e.recipe.source}</li>
+    <li class="list-group-item"><button class="btn btn-primary ingredients">View Ingredient</button></li>
     <li class="list-group-item"><a class="btn btn-primary" href="${e.recipe.url}" role="button">View Original  Recipe</a></li>
     </ul>
   </div>
@@ -57,65 +58,41 @@ function getRecipe(data) {
         wrap.appendChild(imgDiv)
       //! Make List Of Ingredient!!!
 
-    });
-}
+        const oneIng = imgDiv.getElementsByClassName("ingredients")[0]
+
+        oneIng.addEventListener( 'click', () => {
 
 
-
-//<li class="list-group-item"><button class="btn btn-primary ingredients">View Ingredient</button></li>
-
-// ingredients.addEventListener('click',(e) => {
-//   console.log(e.target)
-//   e.preventDefault()
-//   oneIngredient.classList.toggle('activeRecipe')
-//   fetchIngredient()
-// })
-
-
-// async function fetchIngredient() {
-
-//   const res = await fetch(baseUrl + idAndKeyAndInputValue + '&to=24' + '&q=')
-//       const data = await res.json()
-//       clickFOrIng(data.hits)
-//   }
-
-
-
-
-
-
-// function clickFOrIng() {
-
-
-// oneIngredient.innerHTML = `
-// <div class="card " style="width: 18rem;">
-// <img src="${e.recipe.image}" class="card-img-top" alt="...">
-// <div class="card-body ">
-// <h5 class="card-title">Ingredients List</h5>
-// <div class='abtIng'>
-// </div>
-// <p class="card-text">${e.recipe.ingredientLines}</p>
-// <a href="#" class="btn btn-primary back">Go somewhere</a>
-// </div>
-// </div>
-//       `
-//       e.recipe.ingredientLines.forEach( e => {
-//         const ing = createEl('p', 'ing')
-//         const div = selectEl('.abtIng')
-//         ing.textContent = `${e}`
-//         div.appendChild(ing)
-//       })
-      
-//       wrap.style.display = 'none'
-
-
-//       // BACK TO HOME
-//       const back = selectEl('.back')
-//       back.addEventListener('click', () => {
-//         oneIngredient.classList.toggle('activeRecipe')
-//         wrap.style.display = 'flex'
-//       })
-
-// }
-
-// //! MAKE FUNCTION FIRST
+          // e.recipe.ingredientLines.forEach( e => {
+            console.log(e)
+            oneIngredient.innerHTML = `
+            <div class="card oneRecIng" style="width: 18rem;">
+            <img src="${e.recipe.image}" class="card-img-top" alt="...">
+            <div class="card-body ">
+            <h4 class="card-title">Title: ${e.recipe.label}</h4>
+            <h6 class="card-title">Ingredients List</h6>
+            <div class='abtIng'>
+            </div>
+            <p class="card-text">${e.recipe.ingredientLines}</p>
+            <a href="#" class="btn btn-primary back">Back</a>
+            </div>
+            </div>
+                  `
+                  e.recipe.ingredientLines.forEach( e => {
+                    const ing = createEl('p', 'ing')
+                    const div = selectEl('.abtIng')
+                    ing.textContent = `${e}`
+                    div.appendChild(ing)
+                  })
+                  
+                  wrap.style.display = 'none'
+            
+            
+                  // BACK TO HOME
+                  const back = selectEl('.back')
+                  back.addEventListener('click', () => {
+                    wrap.style.display = 'flex'
+                  })
+        })
+    // });
+    })}
