@@ -1,0 +1,18 @@
+$base-color : #343A40;
+$tv-color : #3C948B;
+$white : #fff;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    body {
+        line-height: 1;
+        font-family: 'Roboto', sans-serif;
+    }
+}
+
+@import 'media';
+@import 'header';
+@import 'container';
+@import 'footer';

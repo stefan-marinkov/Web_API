@@ -1,0 +1,66 @@
+
+
+header {
+    width: 100%;
+    height: 2rem;
+    position: fixed;
+    top: 0;
+    background: $base-color;
+    z-index: 10;
+    box-shadow: 0 2px 3px 1px $tv-color;
+    .wrapper {
+        width: 80%;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        span {
+            cursor: pointer;
+        .logo1 {
+            color: $tv-color;
+            border: 4px solid $tv-color;
+            border-right: none;
+        }
+        .logo2 {
+            color: $tv-color;
+            border: 4px solid $tv-color;
+            border-left: none;
+            margin-left: 10px;
+        }
+        
+    }
+        .search {
+            position: relative;
+            .inputSearch {
+                border-radius: 10px;
+                text-align: center;
+
+                &:focus{
+                    outline: none
+                }
+            }
+            
+            .active {
+                position: absolute;
+                top: 1.7rem;
+                list-style: none;
+                color: $white;
+                background: $base-color;
+                width: 100%;
+                border-radius: 0 0 5px 5px;
+                padding: 0;
+                margin: 0;
+                li {
+                    margin: 5% auto;
+                    padding: 2%;
+                    border-bottom: 1px solid $tv-color;
+                    cursor: pointer;
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+    }
+}
