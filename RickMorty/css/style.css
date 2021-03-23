@@ -61,7 +61,7 @@
       justify-content: center;
       align-items: center;
       cursor: pointer; }
-      * .pagination .pug.active {
+      * .pagination .pug.active2 {
         background: #38cacb; }
       * .pagination .pug:hover {
         transform: scale(1.5);
@@ -73,6 +73,7 @@
     left: 60%; } }
 .wrap {
   width: 80%;
+  min-height: 60%;
   position: absolute;
   margin-top: 15%;
   box-shadow: 0 0 10px 0 #38CACB;
@@ -86,7 +87,8 @@
   .wrap .char {
     width: 18%;
     padding: 3%;
-    margin-top: 2%;
+    margin-top: 2.2%;
+    margin-bottom: 2.2%;
     text-align: center;
     border-radius: 10%;
     cursor: pointer; }
@@ -116,6 +118,58 @@
     opacity: 0; }
   95% {
     opacity: .9; } }
+.active {
+  width: 80%;
+  height: 60vh;
+  position: absolute;
+  top: 30%;
+  border: blue 1px solid;
+  box-shadow: inset 0 0 10px 0 #27f1ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: row;
+  backdrop-filter: blur(2px);
+  z-index: 25;
+  animation: opacity .7s ease-in-out; }
+@keyframes opacity {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 0; }
+  95% {
+    opacity: .9; } }
+  .active .singCh {
+    min-height: 80%;
+    padding: 3%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10%; }
+    .active .singCh .sinImg {
+      max-height: 40%;
+      margin-bottom: 5%; }
+    .active .singCh .charInfo {
+      width: 50%;
+      height: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly; }
+      .active .singCh .charInfo p {
+        background: #38CACB;
+        padding: 2%;
+        border-radius: 5%;
+        margin: 2%; }
+    .active .singCh .back {
+      background: #38CACB;
+      margin: auto 0;
+      max-height: 100px;
+      padding: 1rem;
+      width: 100%;
+      border-radius: 5%;
+      cursor: pointer; }
+
 @media all and (max-width: 1024px) {
   .wrap {
     margin-top: 25%; }
